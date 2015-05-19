@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DogPlaydate</string>
+
+    <string name="welcome">Welcome to Dog Playdate App!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="cancel">CANCEL</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
