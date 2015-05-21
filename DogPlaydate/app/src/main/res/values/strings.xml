@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">DogPlaydate</string>
 
-    <string name="welcome">Welcome to Dog Playdate App!</string>
+    <string name="welcome">Dog Play Date</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="cancel">CANCEL</string>
-
+    <string name="signup">Sign Up</string>
+    <string name="facebook_app_id">Log in with Facebook</string>
+    <string name="fn">First Name</string>
+    <string name="ln">Last Name</string>
+    <string name="email">Email</string>
     <string name="action_settings">Settings</string>
 </resources>
