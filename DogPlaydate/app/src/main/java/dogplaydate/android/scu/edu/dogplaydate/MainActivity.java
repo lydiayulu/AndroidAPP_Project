@@ -1,18 +1,31 @@
 package dogplaydate.android.scu.edu.dogplaydate;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //FacebookSdk.sdkInitialize(getApplicationContext());
+
+        Button toSignUp = (Button) findViewById(R.id.toSignUp);
+        toSignUp.setOnClickListener(this);
+    }
+
+    public void onClick(View view) {
+        Log.i("Click", "Click to Signup page");
+        Intent intent = new Intent(MainActivity.this, SignUp.class);
+        startActivity(intent);
     }
 
 

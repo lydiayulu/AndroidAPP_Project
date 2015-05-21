@@ -3,11 +3,7 @@ package dogplaydate.android.scu.edu.dogplaydate;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 
 /**
@@ -21,8 +17,8 @@ public class PersonProfile extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.person_file_layout);
-        button = (Button)findViewById(R.id.button4);
+        //setContentView(R.layout.person_file_layout);
+        //button = (Button)findViewById(R.id.button4);
         button.setOnClickListener(myhandler1);
     }
 

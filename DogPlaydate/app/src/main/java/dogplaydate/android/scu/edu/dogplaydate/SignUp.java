@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by D on 2015/5/20.
+ * Created by Lydia on 5/20/15.
  */
-public class DogProfile extends Activity {
+public class SignUp extends Activity {
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.dog_profile_layout);
-
+        setContentView(R.layout.sign_up);
     }
 
 
