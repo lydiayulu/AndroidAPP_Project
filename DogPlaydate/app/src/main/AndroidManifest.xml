@@ -1,35 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dogplaydate.android.scu.edu.dogplaydate" >
+    package="project.coen268.scu.dogplaydate" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--
+    start copy from Parse.com
+    !
+    -->
+    <!--
+    comment this two, since they are duplicated with the permissions of the map
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    !
+    -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!--
+      IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+      to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+    <permission
+        android:name="project.coen268.scu.dogplaydate.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="project.coen268.scu.dogplaydate.permission.C2D_MESSAGE" />
+    <!--
+    end copy from Parse.com
+    !
+    -->
+
+
+    <!--
+    start for google map
+    !
+    -->
+    <uses-library android:name="com.google.android.maps" />
+
+    <permission
+        android:name="project.coen268.scu.dogplaydate.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="project.coen268.scu.dogplaydate.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!--
+    end for google map
+    !
+    -->
+
+    <!--
+    start from Dai
+    -->
+    <uses-feature android:name="android.hardware.camera"> </uses-feature>
+    <!--
+    end from Dai
+    -->
+
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".CreatePlayDate"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SendMessage"
+            android:label="@string/title_activity_send_message" >
+        </activity>
+
+        <!--
+        start copy from Parse.com
+        !
+        -->
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <category android:name="project.coen268.scu.dogplaydate" />
+            </intent-filter>
+        </receiver>
+        <!--
+        end copy from Parse.com
+        !
+        -->
+
+
+        <!--
+        start for google map
+        key : AIzaSyCYD_J0RY3nJkse4d81mgCIrEHMBW6f9LQ
+        !
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCYD_J0RY3nJkse4d81mgCIrEHMBW6f9LQ" />
+        <!--
+        end for google map
+        !
+        -->
+        <activity
+            android:name=".ViewDatesList"
+            android:label="@string/title_activity_view_dates_list" >
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".ForgetParsePassword"
+            android:label="@string/title_activity_forget_parse_password" >
+        </activity>
+        <activity
+            android:name=".Signup"
+            android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity android:name=".DogAlbum"
+                android:label="@string/title_activity_dog_album">
+        </activity>
+
+        <activity android:name=".DogAlbum2"
+            android:label="@string/title_activity_dog_album2">
+        </activity>
+        <activity android:name=".DogProfile"
+                android:label="@string/title_activity_dog_profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignUp"
-            android:label="@string/app_name"
-            android:parentActivityName=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            </activity>
-
+        <activity android:name=".SingleItemView"
+            android:label="@string/title_activity_single_item_view">
+        </activity>
     </application>
-
 </manifest>

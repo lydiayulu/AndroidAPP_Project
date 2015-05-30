@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".CreatePlayDate">
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:onClick="onClickSearch"
+        android:text="search"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create"
+        android:id="@+id/btnCreateRecord"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickCreate" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End:"
+        android:layout_above="@+id/btnCreateRecord"
+        android:minWidth="60dp"
+        android:paddingBottom="8dp"
+        android:id="@+id/textViewEnd"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start:"
+        android:layout_above="@+id/textViewEnd"
+        android:minWidth="60dp"
+        android:paddingBottom="8dp"
+        android:id="@+id/textViewStart"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_below="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewChosenPlace"
+        android:layout_marginBottom="@dimen/abc_text_size_body_1_material"
+        class="com.google.android.gms.maps.MapFragment"
+        tools:layout="@layout/abc_search_view" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextSearchPlace"
+        android:hint = "begin search..."
+        android:layout_toLeftOf="@+id/btnSearch"
+        android:layout_alignBottom="@+id/btnSearch"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where:"
+        android:minWidth="60dp"
+        android:paddingBottom="5dp"
+        android:layout_above="@+id/textViewStart"
+        android:id="@+id/textViewChosenPlace"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="145dp"
+        android:id="@+id/editTextEndDate"
+        android:layout_alignBottom="@+id/textViewEnd"
+        android:layout_toRightOf="@+id/textViewEnd"
+        android:onClick="onClickEndDate"
+        android:focusableInTouchMode="false"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="145dp"
+        android:id="@+id/editTextStartDate"
+        android:layout_alignBottom="@+id/textViewStart"
+        android:layout_toRightOf="@+id/textViewStart"
+        android:onClick="onClickStartDate"
+        android:focusableInTouchMode="false"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="3dp"
+        android:freezesText="false"
+        android:textSize="14dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="145dp"
+        android:layout_alignBottom="@+id/textViewStart"
+        android:layout_toRightOf="@+id/editTextStartDate"
+        android:layout_alignParentRight="true"
+        android:focusableInTouchMode="false"
+        android:id="@+id/editTextStartTime"
+        android:onClick="onClickStartTime"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="3dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="145dp"
+        android:layout_alignBottom="@+id/textViewEnd"
+        android:layout_toRightOf="@+id/editTextEndDate"
+        android:layout_alignParentRight="true"
+        android:focusableInTouchMode="false"
+        android:id="@+id/editTextEndTime"
+        android:onClick="onClickEndTime"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14dp"/>
+
+</RelativeLayout>

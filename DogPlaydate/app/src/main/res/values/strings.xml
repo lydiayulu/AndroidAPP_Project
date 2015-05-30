@@ -1,15 +1,62 @@
 <resources>
-    <string name="app_name">DogPlaydate</string>
+    <string name="app_name">DogPlayDate</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_send_message">SendMessage</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search Places</string>
+    <string name="search_settings">Search Places</string>
+    <string name="title_activity_view_dates_list">ViewDatesList</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_forget_parse_password">ForgetParsePassword</string>
+    <string name="title_activity_signup">Signup</string>
 
+    <!-- Login/Account creation screen -->
     <string name="welcome">Dog Play Date</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="cancel">CANCEL</string>
-    <string name="signup">Sign Up</string>
-    <string name="facebook_app_id">Log in with Facebook</string>
-    <string name="fn">First Name</string>
-    <string name="ln">Last Name</string>
-    <string name="email">Email</string>
-    <string name="action_settings">Settings</string>
+    <string name="signIn">Sign In</string>
+    <string name="submit">Submit</string>
+    <string name="orText">Or</string>
+    <string name="createAccount">Create Account</string>
+    <string name="emailHint">Email</string>
+    <string name="usernameHint">Username</string>
+    <string name="passwordHint">Password</string>
+    <string name="confirmPasswordHint">Confirm Password</string>
+    <string name="title_activity_launcher">LauncherActivity</string>
+    <string name="changing_fragments">Changing Fragments</string>
+    <string name="title_activity_create_account">CreateAccountActivity</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_register"><b>Sign in</b> or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_register">Create Account</string>
+    <string name="menu_forgot_password">Recover lost password</string>
+    <string name="login_progress_signing_in">Signing in&#8230;</string>
+    <string name="login_progress_password_email">Sending email&#8230;</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_duplicate_email">This email address is already in use</string>
+    <string name="error_duplicate_username">This username is already in use</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_invalid_confirm_password">Passwords do not match</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+
+
+    <!-- from Dai-->
+    <string name="ranklabel">"Date : "</string>
+    <string name="countrylabel">"Position : "</string>
+    <string name="populationlabel">"Memo : "</string>
+    <string name="title_activity_dog_album">DogAlbum</string>
+    <string name="title_activity_dog_album2">DogAlbum2</string>
+    <string name="title_activity_dog_profile">DogProfile</string>
+    <string name="title_activity_single_list_view">SingleListView</string>
+    <string name="title_activity_single_item_view">SingleItemView</string>
+
+
 </resources>

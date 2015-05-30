@@ -5,8 +5,8 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "dogplaydate.android.scu.edu.dogplaydate"
-        minSdkVersion 9
+        applicationId "project.coen268.scu.dogplaydate"
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -18,12 +18,11 @@ android {
         }
     }
 }
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+    compile 'com.google.android.gms:play-services:7.3.0'
 }
