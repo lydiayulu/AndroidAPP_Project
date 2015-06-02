@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "project.coen268.scu.dogplaydate"
-        minSdkVersion 18
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

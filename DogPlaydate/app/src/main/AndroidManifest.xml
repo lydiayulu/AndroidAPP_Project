@@ -183,7 +183,7 @@
             android:label="@string/title_activity_route" >
         </activity>
         <activity
-            android:name=".AddFriends"
+            android:name=".FriendsList"
             android:label="@string/title_activity_add_friends" >
         </activity>
         <activity

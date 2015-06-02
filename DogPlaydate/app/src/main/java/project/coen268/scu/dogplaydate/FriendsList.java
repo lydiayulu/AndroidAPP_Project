@@ -1,12 +1,10 @@
 package project.coen268.scu.dogplaydate;
 
-import android.app.ListActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -19,45 +17,35 @@ import com.parse.ParseUser;
 import java.util.List;
 
 
-public class AddFriends extends ListActivity {
+public class FriendsList extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_friends);
+        setContentView(R.layout.activity_friends_list);
 
+        final ListView lv = (ListView) findViewById(R.id.listView);
         final ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
-
             final ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1);
-            ListView friendlv = (ListView)findViewById(android.R.id.list);
 
-            Button play = (Button)findViewById(android.R.id.button1);
-            play.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    // TODO Auto-generated method stub
-
-                }
-            });
-            friendlv.setAdapter(listAdapter);
+            lv.setAdapter(listAdapter);
 
             ParseRelation relation = currentUser.getRelation("Friends");
 
-            ParseQuery query = relation.getQuery();
-
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Friends");
             query.whereEqualTo("username", null);
 
             query.findInBackground(new FindCallback<ParseObject>() {
 
                 @Override
-                public void done(List<ParseObject> objects, ParseException e) {
-                    // TODO Auto-generated method stub
-                    for (int i = 0; i < objects.size(); i++) {
-                        ParseObject r = objects.get(i);
-                        String name = r.getString("username").toString();
+                public void done(List<ParseObject> list, ParseException e) {
+
+                    for (int i = 0; i < list.size(); i++) {
+                        ParseObject friends = list.get(i);
+                        String name = friends.getString("username").toString();
 
                         listAdapter.add(name);
                     }
@@ -69,11 +57,10 @@ public class AddFriends extends ListActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_friends, menu);
+        getMenuInflater().inflate(R.menu.menu_friends_list, menu);
         return true;
     }
 
@@ -92,4 +79,3 @@ public class AddFriends extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
